@@ -1,4 +1,7 @@
 ﻿using System;
+using TinyNavigationHelper.Abstraction;
+using Weather.ViewModels;
+using Weather.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,8 +12,9 @@ namespace Weather
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            Bootstrapper.Init();
+            
+            NavigationHelper.Current.SetRootView("MainView", true);
         }
 
         protected override void OnStart()
